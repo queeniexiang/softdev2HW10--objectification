@@ -16,7 +16,7 @@ var clicked = function(e) {
 	console.log(e.offsetX);
 	console.log(e.offsetY);
 	console.log(e.toElement);
-	drawDot( e.offsetX, e.offsetY );
+	drawDot( e.offsetX, e.offsetY, 25, "green" );
     }
 };
 
@@ -35,13 +35,33 @@ var makeDot = function(x, y, radius, fillColor) {
     dot.setAttribute("fill", fillColor); 
 
     //If dot is clicked on:
-    cl.addEventListener("click", changeColor);
+    dot.addEventListener("click", changeColor);
+
+    dot.display = function() {
+	pic.appendChild(this);
+    };
+
+    //Accessors:
+    dot.getX = function() {
+	return x;
+    }
+
+    dot.getY = function() {
+	return y;
+    }
+
+    dot
+	
+
+    //dot.drawDot();
 
     return dot; 
 };
 
 var drawDot = function(x, y, radius, fillColor) {
-    var dot = makeDot(x, y, radiu,s fillColor); 
+    var dot = makeDot(x, y, radius, fillColor);
+    dot.display();
+};
 
 //Changes color of the dot being clicked on
 var changeColor = function(e) {
@@ -57,8 +77,10 @@ var drawRand = function() {
     pic.removeChild(this);
     var x = Math.random() * 500;
     var y = Math.random() * 500; 
-    drawDot(x, y);
-}; 
+    drawDot(x, y, 25, "green");
+};
+
+
     
 
 //Tells SVG drawing space to listen to mouse clicks. Will trigger function clicked upon a mouse click. 
