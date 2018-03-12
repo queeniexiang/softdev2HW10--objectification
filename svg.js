@@ -58,10 +58,10 @@ var makeDot = function(x, y, radius, fillColor) {
 	return color;
     }
     
-    var dot.setX = function (newX) { x = newX} 
-    var dot.setY = function (newY) { y = newY} 
-    var dot.setRadius = function (newR) { radius = newR} 
-    var dot.setColor = function (newC) { fillColor = newC}
+    dot.setX = function (newX) { x = newX} 
+    dot.setY = function (newY) { y = newY} 
+    dot.setRadius = function (newR) { radius = newR} 
+    dot.setColor = function (newC) { fillColor = newC}
     
     dot
 
